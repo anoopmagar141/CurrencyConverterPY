@@ -34,3 +34,8 @@ class CurrencyConverter:
             raise ValueError("Invalid currency code!")
         base_amount = amount / self.exchange_rates[from_currency]
         return base_amount * self.exchange_rates[to_currency]
+
+if __name__ == "__main__":
+    converter = CurrencyConverter()
+    print("Welcome to Currency Converter!")
+  
