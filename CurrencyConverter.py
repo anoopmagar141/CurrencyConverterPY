@@ -29,3 +29,8 @@ class CurrencyConverter:
             "BSD": 1.00
         }
     
+    def convert(self, from_currency, to_currency, amount):
+        if from_currency not in self.exchange_rates or to_currency not in self.exchange_rates:
+            raise ValueError("Invalid currency code!")
+        base_amount = amount / self.exchange_rates[from_currency]
+        return base_amount * self.exchange_rates[to_currency]
