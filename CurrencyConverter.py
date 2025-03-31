@@ -46,7 +46,8 @@ if __name__ == "__main__":
         
         converted_amount = converter.convert(from_currency, to_currency, amount)
         print(f"{amount:.2f} {from_currency} = {converted_amount:.2f} {to_currency}")
-   
+    except ValueError as e:
+        print(e)
     except Exception:
         print("An error occurred. Please try again.")
         sys.exit(1)
