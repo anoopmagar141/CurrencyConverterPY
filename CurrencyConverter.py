@@ -38,4 +38,15 @@ class CurrencyConverter:
 if __name__ == "__main__":
     converter = CurrencyConverter()
     print("Welcome to Currency Converter!")
-  
+    
+    try:
+        from_currency = input("Enter source currency (e.g., USD, EUR, INR): ").strip().upper()
+        to_currency = input("Enter target currency (e.g., USD, EUR, INR): ").strip().upper()
+        amount = float(input("Enter amount: "))
+        
+        converted_amount = converter.convert(from_currency, to_currency, amount)
+        print(f"{amount:.2f} {from_currency} = {converted_amount:.2f} {to_currency}")
+   
+    except Exception:
+        print("An error occurred. Please try again.")
+        sys.exit(1)
